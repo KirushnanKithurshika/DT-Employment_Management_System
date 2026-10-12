@@ -1,0 +1,29 @@
+{
+  "name": "ems-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DreamTrillions EMS web portal for HR, company and admin staff",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "5.9.3",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.4.0"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
