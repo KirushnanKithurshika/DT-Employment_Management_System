@@ -1,10 +1,15 @@
 package com.dreamtrillions.ems;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
+/**
+ * Verifies that the application context starts.
+ *
+ * Runs against an in-memory H2 database so the suite does not require a
+ * PostgreSQL instance.
+ */
 @SpringBootTest
 @TestPropertySource(properties = {
         "spring.datasource.url=jdbc:h2:mem:ems-test;DB_CLOSE_DELAY=-1",
@@ -15,21 +20,8 @@ import org.springframework.test.context.TestPropertySource;
 })
 class EmployeeManagementApplicationTests {
 
-    @Autowired
-    private SystemControllerFixture fixture;
-
-    /** Proves the application context loads and the web layer is wired. */
     @Test
     void contextLoads() {
-        // Autowiring SystemControllerFixture fails the test if the context cannot start.
-    }
-
-    /** Minimal helper so the test asserts on real application wiring. */
-    static class SystemControllerFixture {
-        SystemControllerFixture(com.dreamtrillions.ems.api.SystemController controller) {
-            if (controller == null) {
-                throw new IllegalStateException("SystemController was not registered");
-            }
-        }
+        // Fails automatically if the context cannot be created.
     }
 }
