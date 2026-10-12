@@ -1,7 +1,7 @@
-# Runs a stable Flutter toolchain. The `stable` tag is pinned by digest in
-# CI so that image updates cannot silently change the toolchain version.
+# Flutter version is pinned to match CI. Using a floating `stable` tag here
+# means the toolchain can change underneath an unreviewed image rebuild.
 
-FROM ghcr.io/cirruslabs/flutter:stable AS build
+FROM ghcr.io/cirruslabs/flutter:3.47.7 AS build
 
 WORKDIR /app
 ENV PUB_CACHE=/app/.pub-cache

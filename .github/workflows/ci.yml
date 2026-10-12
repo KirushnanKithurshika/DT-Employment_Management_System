@@ -78,8 +78,9 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: stable
-          channel: stable
+          # Pinned explicitly. Passing `channel` together with a `flutter-version`
+          # of "stable" makes the action fail to resolve a concrete version.
+          flutter-version: "3.47.7"
           # Caching stays off until mobile/pubspec.lock is committed, since the
           # cache key is derived from that file.
 
