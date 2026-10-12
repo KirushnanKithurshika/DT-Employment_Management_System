@@ -10,7 +10,7 @@ separate Flutter application talking to the same backend API.
 
 ## Stack
 
-- Flutter (Dart SDK 3.5+)
+- Flutter 3.47.7 (Dart 3.13) — pinned to match CI and the Dockerfile
 - `http` for API calls
 
 ## Run locally
