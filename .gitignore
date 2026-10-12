@@ -1,0 +1,55 @@
+# ---- Secrets / local environment -------------------------------------------------
+.env
+.env.local
+.env.*.local
+
+# ---- Java / Spring Boot ----------------------------------------------------------
+backend/target/
+*.jar
+*.war
+!**/mvnw
+!**/mvnw.cmd
+.mvn/wrapper/maven-wrapper.jar
+
+# ---- Node / Next.js -------------------------------------------------------------
+node_modules/
+web/.next/
+web/out/
+web/build/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---- Flutter / Dart -------------------------------------------------------------
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+mobile/.pub-cache/
+mobile/.pub/
+*.iml
+
+# ---- IDE ------------------------------------------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# ---- OS -------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Logs -----------------------------------------------------------------------
+*.log
+logs/
+
+# ---- Test / coverage ------------------------------------------------------------
+coverage/
+target/site/
+.nyc_output/

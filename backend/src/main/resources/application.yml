@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: ems-backend
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ems}
+    username: ${SPRING_DATASOURCE_USERNAME:ems}
+    password: ${SPRING_DATASOURCE_PASSWORD:ems_local_dev_password}
+
+  jpa:
+    hibernate:
+      # Schema is owned by db/init SQL, never by Hibernate.
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: ${BACKEND_PORT:8080}
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+logging:
+  level:
+    com.dreamtrillions.ems: INFO
